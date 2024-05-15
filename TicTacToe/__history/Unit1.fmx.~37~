@@ -1,0 +1,243 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'TicTacToe_Game'
+  ClientHeight = 480
+  ClientWidth = 408
+  Fill.Kind = Gradient
+  Fill.Gradient.Points = <
+    item
+      Color = xFF8294DC
+      Offset = 0.000000000000000000
+    end
+    item
+      Color = claWhite
+      Offset = 0.846913576126098600
+    end>
+  Fill.Gradient.StartPosition.Y = 1.000000000000000000
+  Fill.Gradient.StopPosition.X = 1.000000000000000000
+  Fill.Gradient.StopPosition.Y = 0.000000017114270889
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Exit: TButton
+    Cursor = crHandPoint
+    StyledSettings = []
+    Position.X = 256.000000000000000000
+    Position.Y = 424.000000000000000000
+    TabOrder = 19
+    Text = 'Exit'
+    TextSettings.Font.Family = 'Sitka Banner'
+    TextSettings.Font.Size = 16.000000000000000000
+    TextSettings.Font.StyleExt = {00060000000000000004000000}
+    TextSettings.FontColor = claRoyalblue
+    TextSettings.Trimming = None
+    OnClick = ExitClick
+  end
+  object cPlay: TLabel
+    Position.X = 80.000000000000000000
+    Position.Y = 63.000000000000000000
+    Size.Width = 32.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'cPlay'
+    TabOrder = 10
+  end
+  object Label1: TLabel
+    Position.X = 56.000000000000000000
+    Position.Y = 63.000000000000000000
+    Size.Width = 16.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'It'#39's'
+    TabOrder = 12
+  end
+  object b1: TButton
+    Cursor = crHandPoint
+    StyledSettings = []
+    ImageIndex = 0
+    Position.X = 48.000000000000000000
+    Position.Y = 88.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 105.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    TextSettings.Font.Family = 'Yu Gothic UI'
+    TextSettings.Font.Size = 100.000000000000000000
+    TextSettings.Font.StyleExt = {00060000000000000004000000}
+    TextSettings.FontColorForState.Hot = claBlack
+    TextSettings.VertAlign = Trailing
+    TextSettings.Trimming = None
+    OnClick = ButtonClick
+  end
+  object b2: TButton
+    Cursor = crHandPoint
+    StyledSettings = []
+    Position.X = 152.000000000000000000
+    Position.Y = 88.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 105.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    TextSettings.Font.Family = 'Yu Gothic UI'
+    TextSettings.Font.Size = 100.000000000000000000
+    TextSettings.Font.StyleExt = {00060000000000000004000000}
+    TextSettings.FontColorForState.Hot = claBlack
+    TextSettings.VertAlign = Trailing
+    TextSettings.Trimming = None
+    OnClick = ButtonClick
+  end
+  object b3: TButton
+    Cursor = crHandPoint
+    StyledSettings = []
+    Position.X = 256.000000000000000000
+    Position.Y = 88.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 105.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    TextSettings.Font.Family = 'Yu Gothic UI'
+    TextSettings.Font.Size = 100.000000000000000000
+    TextSettings.Font.StyleExt = {00060000000000000004000000}
+    TextSettings.FontColorForState.Hot = claBlack
+    TextSettings.VertAlign = Trailing
+    TextSettings.Trimming = None
+    OnClick = ButtonClick
+  end
+  object b4: TButton
+    Cursor = crHandPoint
+    StyledSettings = []
+    Position.X = 48.000000000000000000
+    Position.Y = 192.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 105.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    TextSettings.Font.Family = 'Yu Gothic UI'
+    TextSettings.Font.Size = 100.000000000000000000
+    TextSettings.Font.StyleExt = {00060000000000000004000000}
+    TextSettings.FontColorForState.Hot = claBlack
+    TextSettings.VertAlign = Trailing
+    TextSettings.Trimming = None
+    OnClick = ButtonClick
+  end
+  object b5: TButton
+    Cursor = crHandPoint
+    StyledSettings = []
+    Position.X = 152.000000000000000000
+    Position.Y = 192.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 105.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    TextSettings.Font.Family = 'Yu Gothic UI'
+    TextSettings.Font.Size = 100.000000000000000000
+    TextSettings.Font.StyleExt = {00060000000000000004000000}
+    TextSettings.FontColorForState.Hot = claBlack
+    TextSettings.VertAlign = Trailing
+    TextSettings.Trimming = None
+    OnClick = ButtonClick
+  end
+  object b6: TButton
+    Cursor = crHandPoint
+    StyledSettings = []
+    Position.X = 256.000000000000000000
+    Position.Y = 192.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 105.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    TextSettings.Font.Family = 'Yu Gothic UI'
+    TextSettings.Font.Size = 100.000000000000000000
+    TextSettings.Font.StyleExt = {00060000000000000004000000}
+    TextSettings.FontColorForState.Hot = claBlack
+    TextSettings.VertAlign = Trailing
+    TextSettings.Trimming = None
+    OnClick = ButtonClick
+  end
+  object b7: TButton
+    Cursor = crHandPoint
+    StyledSettings = []
+    Position.X = 48.000000000000000000
+    Position.Y = 296.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 105.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    TextSettings.Font.Family = 'Yu Gothic UI'
+    TextSettings.Font.Size = 100.000000000000000000
+    TextSettings.Font.StyleExt = {00060000000000000004000000}
+    TextSettings.FontColorForState.Hot = claBlack
+    TextSettings.VertAlign = Trailing
+    TextSettings.Trimming = None
+    OnClick = ButtonClick
+  end
+  object b8: TButton
+    Cursor = crHandPoint
+    StyledSettings = []
+    Position.X = 152.000000000000000000
+    Position.Y = 296.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 105.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    TextSettings.Font.Family = 'Yu Gothic UI'
+    TextSettings.Font.Size = 100.000000000000000000
+    TextSettings.Font.StyleExt = {00060000000000000004000000}
+    TextSettings.FontColorForState.Hot = claBlack
+    TextSettings.VertAlign = Trailing
+    TextSettings.Trimming = None
+    OnClick = ButtonClick
+  end
+  object b9: TButton
+    Cursor = crHandPoint
+    StyledSettings = []
+    Position.X = 256.000000000000000000
+    Position.Y = 296.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 105.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    TextSettings.Font.Family = 'Yu Gothic UI'
+    TextSettings.Font.Size = 100.000000000000000000
+    TextSettings.Font.StyleExt = {00060000000000000004000000}
+    TextSettings.FontColorForState.Hot = claBlack
+    TextSettings.VertAlign = Trailing
+    TextSettings.Trimming = None
+    OnClick = ButtonClick
+  end
+  object Label2: TLabel
+    Position.X = 112.000000000000000000
+    Position.Y = 63.000000000000000000
+    Size.Width = 33.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'turn'
+    TabOrder = 11
+  end
+  object Label3: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 97.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'listboxheaderlabel'
+    Text = 'Tic Tac Toe'
+    TabOrder = 9
+  end
+  object Replay: TButton
+    Cursor = crHandPoint
+    StyledSettings = []
+    Position.X = 73.000000000000000000
+    Position.Y = 424.000000000000000000
+    TabOrder = 18
+    Text = 'Replay'
+    TextSettings.Font.Family = 'Sitka Banner'
+    TextSettings.Font.Size = 16.000000000000000000
+    TextSettings.Font.StyleExt = {00060000000000000004000000}
+    TextSettings.FontColor = claRed
+    TextSettings.Trimming = None
+    OnClick = ReplayClick
+  end
+end

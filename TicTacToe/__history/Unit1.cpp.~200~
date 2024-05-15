@@ -1,0 +1,148 @@
+// Importing all the nesessary Libraries and Modules
+#include <fmx.h>
+#pragma hdrstop
+#include "Unit1.h"
+#pragma package(smart_init)
+#pragma resource "*.fmx"
+#include <FMX.StdCtrls.hpp>
+#include <FMX.Objects.hpp>
+#include <FMX.Controls.hpp>
+#include <FMX.Styles.hpp>
+#include <FMX.Colors.hpp>
+//---------------------------------------------------------------------------
+
+
+// Declaring variables and TForm
+TForm1 *Form1;
+char cPlayer = 'x';
+bool gameEnded = false;
+//---------------------------------------------------------------------------
+
+
+// This contains all the conditions
+// Winner
+bool TForm1::Winn(){
+
+	if(!b1->Text.IsEmpty() && B1->Text==b2->Text && b1->Text==b3->Text)
+		return true;
+	if(!b4->Text.IsEmpty() && b4->Text==b5->Text && b4->Text==b6->Text)
+		return true;
+	if(!b7->Text.IsEmpty() && b7->Text==b8->Text && b7->Text==b9->Text)
+		return true;
+	if(!b1->Text.IsEmpty() && b1->Text==b4->Text && b1->Text==b7->Text)
+		return true;
+	if(!b2->Text.IsEmpty() && b2->Text==b5->Text && b2->Text==b8->Text)
+		return true;
+	if(!b9->Text.IsEmpty() && b9->Text==b6->Text && b3->Text==b9->Text)
+		return true;
+	if(!b1->Text.IsEmpty() && b1->Text==b5->Text && b1->Text==b9->Text)
+		return true;
+	if(!b3->Text.IsEmpty() && b3->Text==b5->Text && b3->Text==b7->Text)
+		return true;
+
+
+	return false;
+}
+// Draw
+bool TForm1::IsDraw(){
+	for (int i = 0; i < 9; ++i){
+        TButton* button = dynamic_cast<TButton*>(FindComponent("b" + IntToStr(i + 1)));
+        if (button && button->Text.IsEmpty())
+            return false;
+	}
+	return true;
+}
+//---------------------------------------------------------------------------
+
+
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+	cPlay->Text = String(cPlayer);
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::ButtonClick(TObject *Sender)
+{
+     // Check if the game has ended
+    if (gameEnded)
+		return;
+
+	TButton* clickedB = dynamic_cast<TButton*>(Sender);
+
+    // No overwriting the button text
+    if (!clickedB->Text.IsEmpty())
+        return;
+	clickedB->Text = String(cPlayer);
+
+    // Change the color of the text based on the current player
+	if (cPlayer == 'x'){
+		clickedB->FontColor = TAlphaColorRec::Blue;
+	}
+	if(cPlayer == 'o'){
+		clickedB->FontColor = TAlphaColorRec::Red;
+	}
+
+    // Checking if there's a winner
+    if (Winn()){
+        ShowMessage("Player " + String(cPlayer) + " won!");
+		gameEnded = true;
+	}
+	else if (IsDraw()){
+        ShowMessage("The game is a draw!");
+        gameEnded = true;
+	}
+
+
+    // Conditional Statement changing the player's turn in board
+	if(!gameEnded){
+		if (cPlayer == 'x'){
+			cPlayer = 'o';
+		}
+		else{
+			cPlayer = 'x';
+		}
+		cPlay->Text = cPlayer;
+	}
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::ReplayClick(TObject *Sender)
+{
+// Resetting all buttons back to empty
+	b1->Text = "";
+	b2->Text = "";
+	b3->Text = "";
+	b4->Text = "";
+	b5->Text = "";
+	b6->Text = "";
+	b7->Text = "";
+	b8->Text = "";
+	b9->Text = "";
+
+// Resetting the player back to 'x'
+	cPlayer = 'x';
+	cPlay->Text = String(cPlayer);
+
+// Game is Still not Ended
+    gameEnded = false;
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::ExitClick(TObject *Sender)
+{
+// Exiting the Game
+	  Close();
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::FormCreate(TObject *Sender)
+{
+// Form Creation!!
+}
+//---------------------------------------------------------------------------
+
